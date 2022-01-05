@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>EMBEDDING AND BEAMFORMING: ALL-NEURAL CAUSAL BEAMFORMER FOR MULTICHANNEL SPEECH ENHANCEMENT </title>
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css"/>
+  </head>
+  <body>
+    <article>
+      <header>
+        <div style="text-align:center"><h1>EMBEDDING AND BEAMFORMING: ALL-NEURAL CAUSAL BEAMFORMER FOR MULTICHANNEL SPEECH ENHANCEMENT</h1>
+		<div size="3" style="text-align:center"><h1>Andong Li, Wenzhe Liu, Chengshi Zheng, Xiaodong Li</h1>
+      </header>
+    </article>
+    <!-- <div><b>Paper:</b> <a href="https://www.baidu.com">arXiv</a> <a href="http://www.baidu.com">ICASSP 2019</a></div> -->
+	<div style="margin-right: auto;margin-left: auto; margin-top: 30px; margin-bottom: 100px; width: 70%;"deep="0">
+    <div><b>Abstract:</b> Standing upon the intersection of traditional beamformers and deep
+      neural networks, we propose a causal neural beamformer paradigm
+      called Embedding and Beamforming, and two core modules are designed accordingly, namely EM and BM. For EM, instead of estimating spatial covariance matrix explicitly, a 3-D embedding tensor is
+      learned with the network, where both spatial-spectral-temporal discriminative information can be represented. For BM, a network is
+      directly leveraged to derive the beamforming weights so as to implement filter-and-sum operation. To further improve the speech quality, a post-processing module is introduced to further suppress the
+      residual noise. Based on the DNS-Challenge dataset, we conduct
+      the experiments for multichannel speech enhancement and the results show that the proposed system outperforms previous advanced
+      baselines by a large margin in multiple evaluation metrics. </div>
+    <br></br>
+	<div><b><font size="4">EaBNet Architecture:</b>
+    <br><div align="center"><img src="architecture.png" width="1004" height="335" /></div> </br>
+    <br></br>
+    <div><b>Samples:</b>
+	
+    <div>
+      <hr align="left" width="92%" />
+      <table>
+	  <font size="3">Noisy  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+	  <font size="3">CTSNet &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+	  <font size="3">GaGNet &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <p></p>
+    <font size="3">FasNet+TAC &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp
+    <font size="3">MC-ConvTasNet &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <font size="3">MIMO-UNet  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <p></p>
+    <font size="3">MB-MVDR(oracle) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <font size="3"><b>EaBNet(Pro.)</b> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+	  <font size="3"><b>EaBNet+PostNet(Pro.)</b> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="92%" />
+      <table>Utterance 1 (SNR=-5dB, target-doa=15°, inter-doa=30°)
+
+    <tr ><td><audio controls><source src="noisy/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="CTSNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="GaGNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio>
+		<br><img src="Noisy/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="CTSNet/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="GaGNet/wav_267.png" width="253" height="163" /></br>
+
+		<tr ><td><audio controls><source src="FasNet_TAC/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="MC_ConvTasNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="MIMO_UNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio>
+		<br><img src="FasNet_TAC/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MC_ConvTasNet/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MIMO_UNet/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</br></td></tr>
+
+		<tr ><td><audio controls><source src="MB_MVDR/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="EaBNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio><audio controls><source src="EaBNet/mixture_snr_-5_tar_doa_15_inte_doa_30_rt60_56ms_config_id_267.wav"></audio>
+		<br><img src="MB_MVDR/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet/wav_267.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet_post/wav_267.png" width="253" height="163" /></br>
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="92%" />
+      <table>Utterance 2 (SNR=-2dB, tar-doa=10°, inter-doa=110°)
+        <tr ><td><audio controls><source src="noisy/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="CTSNet/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="GaGNet/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio>
+
+		<br><img src="Noisy/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="CTSNet/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="GaGNet/wav_1043.png" width="253" height="163" /></br>
+
+		<tr ><td><audio controls><source src="FasNet_TAC/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="MC_ConvTasNet/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="MIMO_UNet/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio>
+
+		<br><img src="FasNet_TAC/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MC_ConvTasNet/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MIMO_UNet/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</br></td></tr>
+
+		<tr ><td><audio controls><source src="MB_MVDR/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="EaBNet/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio><audio controls><source src="EaBNet_post/mixture_snr_-2_tar_doa_10_inte_doa_110_rt60_97ms_config_id_1043.wav"></audio>
+
+		<br><img src="MB_MVDR/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet/wav_1043.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet_post/wav_1043.png" width="253" height="163" /></br>
+      </table>
+    </div>
+    <div>
+      <hr align="left" width="92%" />
+      <table>Utterance 3 (SNR=0dB, tar-doa=30°, inter-doa=85°)
+        <tr ><td><audio controls><source src="noisy/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="CTSNet/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="GaGNet/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio>
+
+		<br><img src="Noisy/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="CTSNet/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="GaGNet/wav_1317.png" width="253" height="163" /></br>
+
+		<tr ><td><audio controls><source src="FasNet_TAC/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="MC_ConvTasNet/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="MIMO_UNet/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio>
+
+		<br><img src="FasNet_TAC/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MC_ConvTasNet/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="MIMO_UNet/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</br></td></tr>
+
+		<tr ><td><audio controls><source src="MB_MVDR/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="EaBNet/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio><audio controls><source src="EaBNet_post/mixture_snr_0_tar_doa_30_inte_doa_85_rt60_105ms_config_id_1317.wav"></audio>
+
+		<br><img src="MB_MVDR/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet/wav_1317.png" width="253" height="163" />&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<img src="EaBNet_post/wav_1317.png" width="253" height="163" /></br>
+      </table>
+    </div>
+	<hr align="left" width="92%" />
+    <br></br>
+	<div><b><font size="4">Experimental Results:</b>
+    <br><div align="center"><img src="results.png" width="1125" height="447" /></div></br>
